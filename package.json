@@ -1,6 +1,6 @@
 {
-  "script": {
-    "build": "style-dictionary build"
+  "scripts": {
+    "build": "node ./build.js"
   },
   "devDependencies": {
     "style-dictionary": "^3.8.0"
