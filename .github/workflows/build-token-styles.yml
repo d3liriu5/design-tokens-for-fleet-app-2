@@ -16,8 +16,8 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
       - name: Install Node Dependencies
-        run: npm ci
-      - run: npm install
+        run: npm install
+      - run: npm start
       - name: See a list of...
         run: npm run
       - name: Prep token files
