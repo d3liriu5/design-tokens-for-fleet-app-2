@@ -1,0 +1,10 @@
+{
+  "tokenSetOrder": [
+    "global",
+    "light",
+    "dark",
+    "compact",
+    "conventional",
+    "comfortable"
+  ]
+}
