@@ -5,7 +5,7 @@
   "script": {
     "build": "node build.js",
     "clean": "rm -rf build"
-  }
+  },
   "dependencies": {
     "style-dictionary": "^3.8.0"
   }
