@@ -63,4 +63,4 @@ console.log('Build started...');
 })
 
 console.log('\n==============================================');
-console.log('\nBuild completed!');
+console.log('\nBuild completed, yayy!');
