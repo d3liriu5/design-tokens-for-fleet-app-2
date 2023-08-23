@@ -21,8 +21,8 @@ jobs:
         run: npm run
       - name: Prep token files
         run: |
-          cp "tokens/light.json" "input/brands/light/light.json"
-          cp "tokens/dark.json" "input/brands/dark/dark.json"
+          cp "tokens/light.json" "input/themes/light/light.json"
+          cp "tokens/dark.json" "input/themes/dark/dark.json"
           cp "tokens/global.json" "input/globals/global.json"
           cp "tokens/compact.json" "input/globals/layout.json"
         shell: bash
