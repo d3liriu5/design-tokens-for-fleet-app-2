@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "build.js",
   "script": {
-    "build": "node ./build.js",
+    "build": "node build.js",
     "clean": "rm -rf build"
   },
   "dependencies": {
