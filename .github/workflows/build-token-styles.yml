@@ -22,9 +22,7 @@ jobs:
           cp "tokens/global.json" "input/globals/global.json"
           cp "tokens/compact.json" "input/globals/layout.json"
         shell: bash
-      - name: testing
-        run: npx style-dictionary build
       - name: Convert tokens with Style Dictionary
-        run: npm run build
+        run: npx run build
       - name: Commit all changed files back to the repository
         uses: stefanzweifel/git-auto-commit-action@v4
