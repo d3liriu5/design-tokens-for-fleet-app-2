@@ -29,6 +29,6 @@ jobs:
         shell: bash
       - name: Convert tokens with Style Dictionary
         run: npm run build
-        working-directory: client
+        working-directory: /
       - name: Commit all changed files back to the repository
         uses: stefanzweifel/git-auto-commit-action@v4
