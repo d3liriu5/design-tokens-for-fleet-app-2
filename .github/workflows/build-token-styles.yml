@@ -17,6 +17,7 @@ jobs:
         uses: actions/setup-node@v3
       - name: Install Node Dependencies
         run: npm ci
+      - run: npm install
       - name: See a list of...
         run: npm run
       - name: Prep token files
