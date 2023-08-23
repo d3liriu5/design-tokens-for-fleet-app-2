@@ -51,7 +51,7 @@ console.log('Build started...');
   ['web', 'ios', 'android'].map(function (platform) {
 
     console.log('\n==============================================');
-    console.log(`\nProcessing: [${platform}] [${brand}]`);
+    console.log(`\nProcessing: [${platform}] [${theme}]`);
 
     const StyleDictionary = StyleDictionaryPackage.extend(getStyleDictionaryConfig(theme, platform));
 
