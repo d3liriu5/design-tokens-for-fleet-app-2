@@ -2,16 +2,16 @@ const StyleDictionaryPackage = require('style-dictionary');
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
 
-function getStyleDictionaryConfig(brand, platform) {
+function getStyleDictionaryConfig(theme, platform) {
   return {
     "source": [
-      `input/brands/${brand}/*.json`,
+      `input/themes/${theme}/*.json`,
       "input/globals/**/*.json"
     ],
     "platforms": {
       "web": {
         "transformGroup": "web",
-        "buildPath": `output/web/${brand}/`,
+        "buildPath": `output/web/${theme}/`,
         "files": [{
           "destination": "tokens.scss",
           "format": "css/variables"
@@ -19,7 +19,7 @@ function getStyleDictionaryConfig(brand, platform) {
       },
       "android": {
         "transformGroup": "android",
-        "buildPath": `output/android/${brand}/`,
+        "buildPath": `output/android/${theme}/`,
         "files": [{
           "destination": "tokens.colors.xml",
           "format": "android/colors"
@@ -33,7 +33,7 @@ function getStyleDictionaryConfig(brand, platform) {
       },
       "ios": {
         "transformGroup": "ios",
-        "buildPath": `output/ios/${brand}/`,
+        "buildPath": `output/ios/${theme}/`,
         "files": [{
           "destination": "tokens.h",
           "format": "ios/macros"
@@ -47,13 +47,13 @@ console.log('Build started...');
 
 // PROCESS THE DESIGN TOKENS FOR THE DIFFEREN BRANDS AND PLATFORMS
 
-['light', 'dark'].map(function (brand) {
+['light', 'dark'].map(function (theme) {
   ['web', 'ios', 'android'].map(function (platform) {
 
     console.log('\n==============================================');
     console.log(`\nProcessing: [${platform}] [${brand}]`);
 
-    const StyleDictionary = StyleDictionaryPackage.extend(getStyleDictionaryConfig(brand, platform));
+    const StyleDictionary = StyleDictionaryPackage.extend(getStyleDictionaryConfig(theme, platform));
 
     StyleDictionary.buildPlatform(platform);
 
