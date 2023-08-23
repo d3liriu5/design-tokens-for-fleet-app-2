@@ -1,0 +1,10 @@
+{
+  "name": "design tokens for fleet app 2",
+  "dependencies": {
+    "style-dictionary": "^3.8.0"
+  },
+  "script": {
+    "build": "node ./build.js",
+    "clean": "rm -rf build"
+  }
+}
