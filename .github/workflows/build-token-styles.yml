@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node Dependencies
+        run: npm install style-dictionary
+      - name: Prep token files
+        run: |
+          cp "/tokens/light.json" "/input/brands/light/light.json"
+          cp "/tokens/dark.json" "/input/brands/dark/dark.json"
+          cp "/tokens/global.json" "/input/globals/global.json"
+          cp "/tokens/compact.json" "/input/globals/layout.json"
+        shell: bash
+      - name: Convert tokens with Style Dictionary
+        run: npm run build
+      - name: Commit all changed files back to the repository
+        uses: stefanzweifel/git-auto-commit-action@v4
