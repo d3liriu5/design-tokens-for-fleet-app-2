@@ -66,14 +66,17 @@ function getStyleDictionaryConfig(theme, platform) {
         "files": [{
           "destination": "colors.xml",
           "format": "android/resources",
-          "filter": "isColor",
+          "filter": {
+            "attributes": {
+              "category": "color"
+            }
+          }
           "options": {
            "outputReferences": true
           }
         },{
           "destination": "dimens.xml",
           "format": "android/resources",
-          "filter": "isDimens",
           "options": {
            "outputReferences": true
           }
