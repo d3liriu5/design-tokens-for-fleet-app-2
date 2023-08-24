@@ -54,7 +54,7 @@ function getStyleDictionaryConfig(theme, platform) {
           "destination": "dimens.xml",
           "format": "android/resources",
           "filter": {
-            "type": "size"
+            "group": "spacing"
           },
           "options": {
            "outputReferences": true
