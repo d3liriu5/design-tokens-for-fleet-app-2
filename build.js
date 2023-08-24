@@ -72,6 +72,8 @@ function getStyleDictionaryConfig(theme, platform) {
         },{
           "destination": "dimens.xml",
           "format": "android/resources",
+          "resourceType": "dimen",
+          filter: (token) => token.type === 'dimension',
           "options": {
            "outputReferences": true
           }
