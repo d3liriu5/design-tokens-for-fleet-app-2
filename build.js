@@ -1,6 +1,46 @@
 const StyleDictionaryPackage = require('style-dictionary');
+const TinyColor = require('@ctrl/tinycolor');
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
+
+function camelCase(str) {
+  return str
+    .split('-')
+    .reduce((a, b) => a + b.charAt(0).toUpperCase() + b.slice(1));
+}
+
+StyleDictionaryPackage.registerTransform({
+  name: 'android/colorName',
+  type: 'name',
+  matcher: function (token) {
+    return token.type === 'color'
+  },
+  transformer: function (token) {
+    return camelCase(token.path.slice(0).join(' '))
+  }
+})
+
+StyleDictionaryPackage.registerTransform({
+  name: 'android/pxToDp',
+  type: 'value',
+  matcher: function (token) {
+    return token.type === 'dimension'
+  },
+  transformer: function (token) {
+    return `${token.value}dp`
+  }
+})
+
+StyleDictionaryPackage.registerTransform({
+  name: 'android/colorToHex8',
+  type: 'value',
+  matcher: function (token) {
+    return token.type === 'color'
+  },
+  transformer: function ({ value }) {
+    return `${new TinyColor.TinyColor(value).toHex8String()}`
+  }
+})
 
 function getStyleDictionaryConfig(theme, platform) {
   return {
@@ -21,9 +61,8 @@ function getStyleDictionaryConfig(theme, platform) {
         transforms: [
           'name/cti/camel',
           'android/colorName',
-          'android/fontSize',
           'android/pxToDp',
-          'android/color'
+          'android/colorToHex8'
         ],
         "buildPath": `output/android/${theme}/`,
         "files": [{
