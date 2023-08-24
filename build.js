@@ -3,44 +3,11 @@ const TinyColor = require('@ctrl/tinycolor');
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
 
-function camelCase(str) {
-  return str
-    .split('-')
-    .reduce((a, b) => a + b.charAt(0).toUpperCase() + b.slice(1));
-}
-
-StyleDictionaryPackage.registerTransform({
-  name: 'android/colorName',
-  type: 'name',
-  matcher: function (token) {
-    return token.type === 'color'
-  },
-  transformer: function (token) {
-    return camelCase(token.path.slice(0).join(' '))
-  }
-})
-
-StyleDictionaryPackage.registerTransform({
-  name: 'android/pxToDp',
-  type: 'value',
-  matcher: function (token) {
-    return token.type === 'dimension'
-  },
-  transformer: function (token) {
-    return `${token.value}dp`
-  }
-})
-
-StyleDictionaryPackage.registerTransform({
-  name: 'android/colorToHex8',
-  type: 'value',
-  matcher: function (token) {
-    return token.type === 'color'
-  },
-  transformer: function ({ value }) {
-    return `${new TinyColor.TinyColor(value).toHex8String()}`
-  }
-})
+StyleDictionaryPackage.registerTransformGroup({
+    name: 'tokens-android',
+    // to see the pre-defined "android" transformation use: console.log(StyleDictionaryPackage.transformGroup['android']);
+    transforms: [ "attribute/cti", "name/cti/camel", "size/pxToDp"]
+});
 
 function getStyleDictionaryConfig(theme, platform) {
   return {
@@ -61,7 +28,7 @@ function getStyleDictionaryConfig(theme, platform) {
         }]
       },
       "android": {
-        "transformGroup": "android",
+        "transformGroup": "tokens-android",
         "buildPath": `output/android/${theme}/`,
         "files": [{
           "destination": "colors.xml",
