@@ -14,10 +14,23 @@ StyleDictionaryPackage.registerTransform({
   }
 });
 
+StyleDictionary.registerTransform({
+  name: 'unitless/dp-sp',
+  type: 'value',
+  matcher: function(prop) {
+      return prop.group === 'typography' || prop.group === 'spacing';
+  },
+  transformer: function(prop) {
+      // in Android font sizes are expressed in "sp" units
+      let unit = (prop.group === 'typography') ? 'sp' : 'dp';
+      return `${prop.value}${unit}`;
+  }
+});
+
 StyleDictionaryPackage.registerTransformGroup({
   name: 'tokens-android',
   // to see the pre-defined "android" transformation use: console.log(StyleDictionaryPackage.transformGroup['android']);
-  transforms: [ "attribute/cti", "name/cti/camel", "size/pxToDp"]
+  transforms: [ "attribute/cti", "name/cti/camel", "unitless/dp-sp"]
 });
 
 function getStyleDictionaryConfig(theme, platform) {
