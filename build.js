@@ -66,9 +66,15 @@ function getStyleDictionaryConfig(theme, platform) {
         "files": [{
           "destination": "colors.xml",
           "format": "android/resources",
+          "options": {
+           "outputReferences": true
+          }
         },{
           "destination": "dimens.xml",
-          "format": "android/dimens",
+          "format": "android/resources",
+          "options": {
+           "outputReferences": true
+          }
         }]
       },
       "ios": {
