@@ -89,7 +89,7 @@ function getStyleDictionaryConfig(theme, platform) {
           "packageName": "StyleDictionaryColor",
           "filter": {
             "attributes": {
-              "category": "color"
+              "type": "color"
             }
           }
         },{
