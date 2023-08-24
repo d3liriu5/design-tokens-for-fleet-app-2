@@ -2,17 +2,17 @@
 
 <!--
   Do not edit directly
-  Generated on Thu, 24 Aug 2023 22:22:37 GMT
+  Generated on Thu, 24 Aug 2023 22:25:09 GMT
 -->
 <resources>
-  <string name="pRefSpacing1">4</string>
-  <string name="pRefSpacing2">8</string>
-  <string name="pRefSpacing3">12</string>
-  <string name="pRefSpacing4">16</string>
-  <string name="pRefSpacing5">20</string>
-  <string name="pRefSpacing6">24</string>
-  <string name="pRefSpacing7">28</string>
-  <string name="pRefSpacing8">32</string>
+  <string name="pRefSpacing1">4dp</string>
+  <string name="pRefSpacing2">8dp</string>
+  <string name="pRefSpacing3">12dp</string>
+  <string name="pRefSpacing4">16dp</string>
+  <string name="pRefSpacing5">20dp</string>
+  <string name="pRefSpacing6">24dp</string>
+  <string name="pRefSpacing7">28dp</string>
+  <string name="pRefSpacing8">32dp</string>
   <string name="pRefSpacingEdgeMargin">@string/pRefSpacing5</string>
   <string name="pRefSpacingButtonDefault">@string/pRefSpacing3</string>
   <string name="pRefSpacingRowNotifications">@string/pRefSpacing3</string>
