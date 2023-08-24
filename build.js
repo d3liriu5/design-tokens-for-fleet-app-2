@@ -67,9 +67,7 @@ function getStyleDictionaryConfig(theme, platform) {
           "destination": "colors.xml",
           "format": "android/resources",
           "filter": {
-            "attributes": {
-              "category": "color"
-            }
+            "type": "color"
           },
           "options": {
            "outputReferences": true
