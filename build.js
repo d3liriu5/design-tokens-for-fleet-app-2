@@ -83,10 +83,8 @@ function getStyleDictionaryConfig(theme, platform) {
           "className": "StyleDictionaryColor",
           "packageName": "StyleDictionaryColor",
           "filter": {
-            "attributes": {
-              "type": "color"
-            }
-          }
+            "type": "color"
+          },
         },{
           "destination": "StyleDictionarySize.kt",
           "format": "compose/object",
