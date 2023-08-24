@@ -3,6 +3,22 @@ const TinyColor = require('@ctrl/tinycolor');
 
 // HAVE THE STYLE DICTIONARY CONFIG DYNAMICALLY GENERATED
 
+StyleDictionaryPackage.registerTransform({
+  name: 'size/pxToDp',
+  type: 'value',
+  matcher: function(prop) {
+      return prop.value.match(/^[\d.]+px$/);
+  },
+  transformer: function(prop) {
+      return prop.value.replace(/px$/, 'dp');
+  }
+});
+
+StyleDictionaryPackage.registerTransformGroup({
+  name: 'tokens-android',
+  // to see the pre-defined "android" transformation use: console.log(StyleDictionaryPackage.transformGroup['android']);
+  transforms: [ "attribute/cti", "name/cti/camel", "size/pxToDp"]
+});
 
 function getStyleDictionaryConfig(theme, platform) {
   return {
