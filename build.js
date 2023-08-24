@@ -18,11 +18,11 @@ StyleDictionaryPackage.registerTransform({
   name: 'unitless/dp-sp',
   type: 'value',
   matcher: function(prop) {
-      return prop.group === 'typography' || prop.group === 'spacing';
+      return prop.type === 'typography' || prop.type === 'spacing';
   },
   transformer: function(prop) {
       // in Android font sizes are expressed in "sp" units
-      let unit = (prop.group === 'typography') ? 'sp' : 'dp';
+      let unit = (prop.type === 'typography') ? 'sp' : 'dp';
       return `${prop.value}${unit}`;
   }
 });
