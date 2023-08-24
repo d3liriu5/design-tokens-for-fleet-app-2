@@ -65,7 +65,7 @@ function getStyleDictionaryConfig(theme, platform) {
         "buildPath": `output/android/${theme}/`,
         "files": [{
           "destination": "colors.xml",
-          "format": "android/colors",
+          "format": "android/resources",
         },{
           "destination": "dimens.xml",
           "format": "android/dimens",
