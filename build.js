@@ -70,7 +70,7 @@ function getStyleDictionaryConfig(theme, platform) {
             "attributes": {
               "category": "color"
             }
-          }
+          },
           "options": {
            "outputReferences": true
           }
