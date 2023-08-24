@@ -111,7 +111,10 @@ function getStyleDictionaryConfig(theme, platform) {
 }
 
 console.log('Build started...');
-console.log(StyleDictionaryPackage.transformGroup['android']);
+
+console.log('Android pre-defined transformations:' + StyleDictionaryPackage.transformGroup['android']);
+console.log('iOS pre-defined transformations:' + StyleDictionaryPackage.transformGroup['ios']);
+console.log('Compose pre-defined transformations:' + StyleDictionaryPackage.transformGroup['compose']);
 
 // PROCESS THE DESIGN TOKENS FOR THE DIFFEREN BRANDS AND PLATFORMS
 
