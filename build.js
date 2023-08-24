@@ -6,7 +6,6 @@ const TinyColor = require('@ctrl/tinycolor');
 StyleDictionaryPackage.registerTransformGroup({
     name: 'tokens-android',
     // to see the pre-defined "android" transformation use: console.log(StyleDictionaryPackage.transformGroup['android']);
-    console.log(StyleDictionaryPackage.transformGroup['android']);
     transforms: [ "attribute/cti", "name/cti/camel", "size/pxToDp"]
 });
 
@@ -90,6 +89,7 @@ function getStyleDictionaryConfig(theme, platform) {
 }
 
 console.log('Build started...');
+console.log(StyleDictionaryPackage.transformGroup['android']);
 
 // PROCESS THE DESIGN TOKENS FOR THE DIFFEREN BRANDS AND PLATFORMS
 
