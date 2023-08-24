@@ -58,26 +58,14 @@ function getStyleDictionaryConfig(theme, platform) {
         }]
       },
       "android": {
-        transforms: [
-          'name/cti/camel',
-          'android/colorName',
-          'android/pxToDp',
-          'android/colorToHex8'
-        ],
+        "transformGroup": "android",
         "buildPath": `output/android/${theme}/`,
         "files": [{
           "destination": "colors.xml",
           "format": "android/colors",
-          resourceType: 'color',
-          filter: (token) => token.type === 'color'
         },{
           "destination": "dimens.xml",
           "format": "android/dimens",
-          resourceType: 'dimen',
-          filter: (token) => token.type === 'dimension'
-        },{
-          "destination": "tokens.font_dimens.xml",
-          "format": "android/fontDimens"
         }]
       },
       "ios": {
