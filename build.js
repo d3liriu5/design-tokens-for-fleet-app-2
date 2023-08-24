@@ -81,7 +81,7 @@ function getStyleDictionaryConfig(theme, platform) {
       },
       "compose": {
         "transformGroup": "compose",
-        "buildPath": "build/compose/",
+        "buildPath": `output/compose/${theme}/`,
         "files": [{
           "destination": "StyleDictionaryColor.kt",
           "format": "compose/object",
