@@ -14,7 +14,7 @@ StyleDictionaryPackage.registerTransform({
   }
 });
 
-StyleDictionary.registerTransform({
+StyleDictionaryPackage.registerTransform({
   name: 'unitless/dp-sp',
   type: 'value',
   matcher: function(prop) {
