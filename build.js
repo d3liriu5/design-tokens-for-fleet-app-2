@@ -75,6 +75,9 @@ function getStyleDictionaryConfig(theme, platform) {
         },{
           "destination": "dimens.xml",
           "format": "android/resources",
+          "filter": {
+            "type": "size"
+          },
           "options": {
            "outputReferences": true
           }
