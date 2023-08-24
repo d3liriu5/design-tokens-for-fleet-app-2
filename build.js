@@ -1,3 +1,5 @@
+import StyleDictionary from 'style-dictionary-utils';
+
 const StyleDictionaryPackage = require('style-dictionary');
 const TinyColor = require('@ctrl/tinycolor');
 
