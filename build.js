@@ -1,5 +1,3 @@
-import StyleDictionary from 'style-dictionary-utils';
-
 const StyleDictionaryPackage = require('style-dictionary');
 const TinyColor = require('@ctrl/tinycolor');
 
@@ -68,14 +66,14 @@ function getStyleDictionaryConfig(theme, platform) {
         "files": [{
           "destination": "colors.xml",
           "format": "android/resources",
+          "filter": "isColor",
           "options": {
            "outputReferences": true
           }
         },{
           "destination": "dimens.xml",
           "format": "android/resources",
-          "resourceType": "dimen",
-          filter: (token) => token.type === 'dimension',
+          "filter": "isDimens",
           "options": {
            "outputReferences": true
           }
