@@ -54,7 +54,10 @@ function getStyleDictionaryConfig(theme, platform) {
         "buildPath": `output/web/${theme}/`,
         "files": [{
           "destination": "tokens.css",
-          "format": "css/variables"
+          "format": "css/variables",
+          "options": {
+           "outputReferences": true
+          }
         }]
       },
       "android": {
