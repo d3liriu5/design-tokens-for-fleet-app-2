@@ -7,10 +7,10 @@ StyleDictionaryPackage.registerTransform({
   name: 'size/pxToDp',
   type: 'value',
   matcher: function(prop) {
-      return prop.value.match(/^[\d.]+px$/);
+      return String(prop.value).match(/^[\d.]+px$/);
   },
   transformer: function(prop) {
-      return prop.value.replace(/px$/, 'dp');
+      return String(prop.value).replace(/px$/, 'dp');
   }
 });
 
